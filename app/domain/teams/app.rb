@@ -6,9 +6,8 @@ module Teams
       @repository = repository
     end
 
-    def create(args= {})
-      args = [args] if args.is_a?(Hash)
-      args.map {|team| @repository.create(name: team[:name])}
+    def create(**args)
+      @repository.create(**args)
     end
   end
 end
