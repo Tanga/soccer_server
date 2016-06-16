@@ -45,5 +45,15 @@ module DomainGenerators
     def create_sql_repository_spec_file
       template('templates/spec/sql_repository.tt', "../../spec/domain/#{name}/sql_repository_spec.rb")
     end
+
+    def create_active_record_model
+      template('templates/active_record_model.tt', "../../app/domain_adapters/ar_repo/ar_models/#{head_name}.rb")
+
+    end
+
+    def create_active_record_model_spec
+      template('templates/spec/active_record_model.tt', "../../spec/domain_adapters/ar_repo/ar_models/#{head_name.rb}")
+    end
+
   end
 end

@@ -1,0 +1,7 @@
+module ARRepo
+  module ARModels
+    # An Active Record <%= head_name.capitalize %>
+    class <%= head_name.capitalize %> < ActiveRecord::Base
+    end
+  end
+end
