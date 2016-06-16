@@ -3,7 +3,7 @@ require 'rails_helper'
 describe <%= name.capitalize %>::App do
   subject { described_class.new }
   describe '#create' do
-    it ''
+    it 'Write a test for your new app object'
   end
 
 end

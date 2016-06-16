@@ -1,7 +1,10 @@
 require 'rails_helper'
 require File.expand_path('spec/domain/<%= name %>/<%= head_name %>_behavior.rb')
 
+
+
 describe <%= name.capitalize %>::<%= head_name.capitalize %> do
+  it "Supply proper let statements or I will break eventually!"
   subject { described_class.new }
 
   it_should_behave_like("a Domain <%= head_name.capitalize %>")

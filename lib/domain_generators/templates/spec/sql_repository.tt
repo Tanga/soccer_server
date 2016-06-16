@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe <%= name.capitalize %>::SQLRepository do
   subject { described_class.new }
+  it 'Add any custom behavior for this SQL repository'
   describe '#create' do
-    it ''
   end
 end

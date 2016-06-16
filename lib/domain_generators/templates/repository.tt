@@ -1,4 +1,5 @@
 module <%= name.capitalize %>
+  # This is the default "in memory" <%= name.capitalize %> Repository
   class Repository
     @collection = {}
 

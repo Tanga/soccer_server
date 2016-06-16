@@ -1,4 +1,5 @@
 module <%= name.capitalize %>
+  # This is the SQL <%= name.capitalize %> Repository
   class SQLRepository
     def self.create **args
       ARRepo::ARModels::<%= head_name.capitalize %>.create args

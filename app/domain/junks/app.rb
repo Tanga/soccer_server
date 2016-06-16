@@ -1,6 +1,4 @@
-module <%= name.capitalize %>
-  # This is an app that clients will use to interact with the
-  # <%= name.capitalize %> Aggregate
+module Junks
   class App
     def initialize(repository: Repository)
       @repository = repository

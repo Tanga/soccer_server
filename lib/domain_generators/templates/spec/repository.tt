@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe <%= name.capitalize %>::Repository do
   subject { described_class.new }
+  it 'Add any custom behavior for this in memory repository'
   describe '#create' do
-    it ''
   end
 end
