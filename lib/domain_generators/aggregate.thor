@@ -52,7 +52,7 @@ module DomainGenerators
     end
 
     def create_active_record_model_spec
-      template('templates/spec/active_record_model.tt', "../../spec/domain_adapters/ar_repo/ar_models/#{head_name}.rb")
+      template('templates/spec/active_record_model.tt', "../../spec/domain_adapters/ar_repo/ar_models/#{head_name}_spec.rb")
     end
 
   end

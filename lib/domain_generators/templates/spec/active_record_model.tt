@@ -1,9 +1,10 @@
 require 'rails_helper.rb'
 require File.expand_path('spec/domain/<%= name %>/<%= head_name %>_behavior.rb')
 
-
-
-describe <%= name.capitalize %>::<%= head_name.capitalize %> do
-  it "Supply proper let statements or I will break eventually!"
-  it_should_behave_like("a Domain <%= head_name.capitalize %>")
+module ARRepo::ARModels
+  describe <%= head_name.capitalize %> do
+    it "This should behave like a <%= head_name.capitalize %>!"
+    # Uncomment the line below when you are ready for prime time!
+    # it_should_behave_like("a Domain <%= head_name.capitalize %>")
+  end
 end
