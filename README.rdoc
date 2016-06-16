@@ -1,0 +1,26 @@
+Domain Workshop
+  Establish Ubiquitous Language
+  Draw initial model
+  Draw realtionships
+  Draw navigibility
+  Draw multiplicity
+
+First Iteration
+  Implement and test model in code
+  Refine model from lessons learned during implementation
+  Establish Aggregate Boundaries
+    Add Modules
+    Add Repositories
+    Add App
+    Add Commands
+
+Review with Product owner
+  Review model
+  Review Tests
+
+Integrate with Rails for API
+  Add Active Record Repositories
+  Add Controllers
+
+Notes
+  it_should_behave_like for interfaces

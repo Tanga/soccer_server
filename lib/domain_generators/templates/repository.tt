@@ -1,0 +1,10 @@
+module <%= name.capitalize %>
+  class Repository
+    @collection = {}
+
+    def self.create(attributes={})
+      next_id = @collection.keys.length + 1
+      @collection[next_id] = <%= head_name.capitalize %>.new(attributes.merge(id: next_id))
+    end
+  end
+end

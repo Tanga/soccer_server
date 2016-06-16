@@ -1,0 +1,8 @@
+module <%= name.capitalize %>
+  class <%= head_name.capitalize %>
+    attr_accessor :id
+    def initialize(id:)
+      @id = id
+    end
+  end
+end
