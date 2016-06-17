@@ -1,5 +1,9 @@
 module <%= name.capitalize %>
-  # This is the default "in memory" <%= name.capitalize %> Repository
+  # This is the default "in memory" <%= name.capitalize %> Repository.
+  # When developing the domain, the in-memory repo makes it things fast to test
+  # without mocking.  A repository is only able to do operations on the aggregate
+  # head (<%= name.capitalize %>::<%= head_name.capitalize %>).  There
+  # can be only one repository per module in the domain.
   class Repository
     @collection = {}
 

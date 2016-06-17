@@ -1,6 +1,8 @@
 module <%= name.capitalize %>
-  # This is the head of the <%= name.capitalize %> Aggregate
-  class <%= head_name.capitalize %>
+  # This is the head of the <%= name.capitalize %> Aggregate.  An
+  # Aggregate head is generally an Entity is the only object
+  # that can be interacted with by a repository.
+  class <%= head_name.capitalize %>y a
     attr_accessor :id
     def initialize(id:)
       @id = id

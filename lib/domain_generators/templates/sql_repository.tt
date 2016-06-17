@@ -1,5 +1,9 @@
 module <%= name.capitalize %>
-  # This is the SQL <%= name.capitalize %> Repository
+  # This is the SQL <%= name.capitalize %> Repository.  Inject this
+  # repo to replace the default in memory adapter if you would like
+  # to back the domain with a SQL database.  See notes in
+  # <%= name.capitalize %>::<%= head_name.capitalize %>::Repository
+  # for more details
   class SQLRepository
     def self.create **args
       ARRepo::ARModels::<%= head_name.capitalize %>.create args
