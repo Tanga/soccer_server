@@ -4,7 +4,7 @@ describe <%= name.capitalize %>::App do
   subject { described_class.new }
   describe '#create' do
     it 'creates a <%= head_name.capitalize %>' do
-      expect(subject.create()).to_be
+      expect(subject.create()).to be
     end
   end
 

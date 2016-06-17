@@ -1,7 +1,7 @@
 module <%= name.capitalize %>
-  # This is an app that clients will are required to interact
-  # with to peform operations in the <%= name.capitalize %>
-  # Aggregate
+  # This is an app that clients will be required to interact
+  # with to perform operations on the <%= name.capitalize %> Aggregate
+
   class App
     delegate :create, to: :@repository
     def initialize(repository: Repository)
