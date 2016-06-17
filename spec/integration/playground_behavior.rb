@@ -8,18 +8,16 @@ RSpec.shared_examples "the Playground" do |parameter|
     harrisburg = teams_app.create(name: "Harrisburg City Islanders")
 
     # Players
-    jim, fred, tom = *players_app.create([
-      { name: 'Jim', team: charleston },
-      { name: 'Fred', team: charleston },
-      { name: 'Tom', team: harrisburg },
-    ])
+    jim = players_app.create(name: 'Jim', team: charleston)
+    fred = players_app.create(name: 'Fred', team: charleston)
+    tom = players_app.create(name: 'Tom', team: harrisburg)
 
     # Fixtures
     tomorrow = fixtures_app.create(
       season: 2016,
-      pitch: pitch,
-      date:  1.day.from_now,
-      teams: [harrisburg, charleston]
+      pitch:  pitch,
+      date:   1.day.from_now,
+      teams:  [harrisburg, charleston]
     )
 
     expect(tomorrow.season).to be_a(Fixtures::Season)

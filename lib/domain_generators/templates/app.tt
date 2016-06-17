@@ -2,12 +2,9 @@ module <%= name.capitalize %>
   # This is an app that clients will use to interact with the
   # <%= name.capitalize %> Aggregate
   class App
+    delegate :create, to: :@repository
     def initialize(repository: Repository)
       @repository = repository
-    end
-
-    def create(**args)
-      @repository.create(args)
     end
   end
 end
