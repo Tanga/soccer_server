@@ -4,10 +4,8 @@ RSpec.shared_examples "the Playground" do |parameter|
     pitch = pitches_app.create(name: "College Stadium")
 
     # Teams
-    charleston, harrisburg = *teams_app.create([
-      { name: "Charleston Battery" },
-      { name: "Harrisburg City Islanders"}
-    ])
+    charleston = teams_app.create(name: "Charleston Battery")
+    harrisburg = teams_app.create(name: "Harrisburg City Islanders")
 
     # Players
     jim, fred, tom = *players_app.create([
