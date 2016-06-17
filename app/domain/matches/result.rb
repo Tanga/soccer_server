@@ -4,11 +4,10 @@ module Matches
     attr_accessor :winning_team, :losing_team, :type
 
     def initialize goals:
-      @goals = goals
-      @type = tie? ? App::RESULT_TIE : App::RESULT_WIN_LOSE
-
+      @goals        = goals
+      @type         = determine_result_type
       @winning_team = nil
-      @losing_team = nil
+      @losing_team  = nil
 
       return if tie?
       @winning_team = team_goal_counts.first
@@ -17,18 +16,21 @@ module Matches
 
     private
 
+    def determine_result_type
+      return App::RESULT_TIE if tie?
+      App::RESULT_WIN_LOSE
+    end
+
     def tie?
       team_goals.keys.count == 1
     end
 
     def team_goals
-      @goals.group_by(&:team).map do |team, goals|
-        [goals.count, team]
-      end.to_h
+      @goals.group_by(&:team).map { |team, goals| [goals.count, team] }.to_h
     end
 
     def team_goal_counts
-      team_goals.sort.reverse.map{|a| a[1]}
+      team_goals.sort.reverse.map{|count, team| team}
     end
   end
 end
