@@ -1,4 +1,5 @@
 require 'simplecov'
+require 'domain_helper'
 
 SimpleCov.start
 
