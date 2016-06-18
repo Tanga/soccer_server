@@ -9,6 +9,10 @@ module Fixtures
         Fixtures::Fixture.new(attributes.merge(id: next_id))
     end
 
+    def self.read id
+      @collection[id]
+    end
+
     def self.update id, attributes
       fixture = read(id)
 
@@ -19,15 +23,11 @@ module Fixtures
       fixture
     end
 
-    def self.read id
-      @collection[id]
+    def self.delete id
+      @collection.delete id
     end
 
-    def self.delete(id)
-      @collection.delete(id)
-    end
-
-    def self.delete_all
+    def self.__delete_all
       @collection = {}
     end
   end
