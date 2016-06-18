@@ -4,6 +4,7 @@ module Fixtures
   class App
     RESULT_TIE      = 'tied'
     RESULT_WIN_LOSE = 'win-lose'
+    delegate(:delete, :update, :read, to: :@repository)
 
     def initialize repository: Fixtures::Repository
       @repository = repository

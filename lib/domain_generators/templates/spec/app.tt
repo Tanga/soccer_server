@@ -4,8 +4,30 @@ describe <%= name.capitalize %>::App do
   subject { described_class.new }
   describe '#create' do
     it 'creates a <%= head_name.capitalize %>' do
-      expect(subject.create()).to be
+      expect(create_<%= head_name %>).to be
     end
   end
 
+  describe '#read' do
+    it 'should return a <%= head_name.capitalize %> by id' do
+      create_<%= head_name %>
+      expect(subject.read(1)).to be
+    end
+  end
+
+  describe '#destroy' do
+    it 'should destroy a <%= head_name.capitalize %>' do
+      <%= head_name %> = create_<%= head_name %>
+      subject.delete(1)
+      expect(subject.read(1)).to be_nil
+    end
+  end
+
+  describe '#update' do
+    xit 'should update'
+  end
+
+  def create_<%= head_name %>
+    subject.create
+  end
 end

@@ -9,25 +9,26 @@ module Fixtures
         Fixtures::Fixture.new(attributes.merge(id: next_id))
     end
 
-    # def self.update fixture
-    #   @collection[fixture.id] = fixture
-    #   fixture
-    # end
+    def self.update id, attributes
+      fixture = read(id)
 
-    # def self.read id
-    #   @collection[id]
-    # end
+      attributes.each do |field, value|
+        fixture.send("#{field}=", value)
+      end
 
-    # def self.delete(id)
-    #   # NOT IMPLEMENTED
-    # end
+      fixture
+    end
 
-    # def self.list
-    #   @collection.values
-    # end
+    def self.read id
+      @collection[id]
+    end
 
-    # def self.reset
-    #   @collection = {}
-    # end
+    def self.delete(id)
+      @collection.delete(id)
+    end
+
+    def self.delete_all
+      @collection = {}
+    end
   end
 end
