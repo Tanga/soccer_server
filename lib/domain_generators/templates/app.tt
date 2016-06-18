@@ -3,7 +3,7 @@ module <%= name.capitalize %>
   # with to perform operations on the <%= name.capitalize %> Aggregate
 
   class App
-    delegate :create, :read, :update, :delete to: :@repository
+    delegate :create, :read, :update, :delete, to: :@repository
     def initialize(repository: Repository)
       @repository = repository
     end
