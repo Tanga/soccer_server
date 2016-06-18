@@ -1,26 +1,19 @@
-Domain Workshop
-  Establish Ubiquitous Language
-  Draw initial model
-  Draw realtionships
-  Draw navigibility
-  Draw multiplicity
+Ubiquitous Language Domain Workshop
+  Draw Objects
+  Draw Relationships
+  Draw Navigability
+  Draw Multiplicity
+  Find Invariants
 
-First Iteration
-  Implement and test model in code
-  Refine model from lessons learned during implementation
-  Establish Aggregate Boundaries
-    Add Modules
-    Add Repositories
-    Add App
-    Add Commands
+Implementation
+  Determine Entities and Values
+  Draw Aggregate Boundaries
 
 Review with Product owner
   Review model
   Review Tests
 
 Integrate with Rails for API
-  Add Active Record Repositories
+  Routes
   Add Controllers
-
-Notes
-  it_should_behave_like for interfaces
+  SQL Repository
