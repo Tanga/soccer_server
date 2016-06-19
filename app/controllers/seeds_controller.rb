@@ -11,14 +11,14 @@ class SeedsController < ApplicationController
   end
 
   def new
-    pitch = @pitches_app.create(name: "My backyard")
-    harrison = @teams_app.create(name: "Harrison")
+    pitch      = @pitches_app.create(name: "My backyard")
+    harrison   = @teams_app.create(name: "Harrison")
     charleston = @teams_app.create(name: "Charleston")
 
-    chris = @players_app.create(name: 'Chris', team: harrison)
-    carlos = @players_app.create(name: 'Carlos', team: charleston)
+    chris      = @players_app.create(name: 'Chris', team: harrison)
+    carlos     = @players_app.create(name: 'Carlos', team: charleston)
 
-    match = @matches_app.create(
+    match      = @matches_app.create(
       teams: [harrison, charleston],
       pitch: pitch,
       goals: @matches_app.build_goals([
