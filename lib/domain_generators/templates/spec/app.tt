@@ -2,6 +2,9 @@ require 'rails_helper'
 
 describe <%= name.capitalize %>::App do
   subject { described_class.new }
+
+  <%= attributes.map{|attribute| "let(:#{attribute}) { double(\"#{attribute.capitalize}\") }"}.join("\n\t") %>
+
   describe '#create' do
     it 'creates a <%= head_name.capitalize %>' do
       expect(create_<%= head_name %>).to be
@@ -28,6 +31,6 @@ describe <%= name.capitalize %>::App do
   end
 
   def create_<%= head_name %>
-    subject.create
+    subject.create <%= attributes.map{|attribute| "#{attribute}: #{attribute}"}.join(', ') %>
   end
 end

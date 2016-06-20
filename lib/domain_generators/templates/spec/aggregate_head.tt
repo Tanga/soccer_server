@@ -4,5 +4,7 @@ require File.expand_path('spec/domain/<%= name %>/<%= head_name %>_behavior.rb')
 describe <%= name.capitalize %>::<%= head_name.capitalize %> do
   subject { described_class.new }
 
+  <%= attributes.map{|attribute| "let(:#{attribute}) { double('#{attribute.capitalize}') }"}.join("\n\t") %>
+
   it_should_behave_like("a Domain <%= head_name.capitalize %>")
 end

@@ -1,9 +1,12 @@
+require 'pry'
 module DomainGenerators
   class Aggregate < Thor::Group
     include Thor::Actions
 
     argument :name
     argument :head_name
+    argument :attributes, type: :array
+
     class_option :test_framework, :default => :rspec
 
     def self.source_root
