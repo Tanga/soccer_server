@@ -1,0 +1,19 @@
+require 'rails_helper'
+
+describe <%= module_name.capitalize %>::<%= name.capitalize %> do
+  subject { described_class.new }
+
+  <%= attributes.map{|attribute| "let(:#{attribute}) { double('#{attribute.capitalize}') }"}.join("\n\t") %>
+
+  describe 'attributes' do
+    subject do
+      described_class.new(<%= attributes.map{|attribute| "#{attribute}: #{attribute}"}.join(", ") %> )
+    end
+
+    <%= attributes.map do |attribute|
+      "\t\tdescribe '##{attribute}' do\n" +
+        "\t\t\tit { expect(subject.#{attribute}).to eq #{attribute}}\n" +
+      "\t\tend"
+    end.join() %>
+  end
+end
