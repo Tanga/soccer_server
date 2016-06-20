@@ -18,7 +18,7 @@ class SeedsController < ApplicationController
     chris      = @players_app.create(name: 'Chris', team: harrison)
     carlos     = @players_app.create(name: 'Carlos', team: charleston)
 
-    match      = @matches_app.create(
+    match = @matches_app.create(
       teams: [harrison, charleston],
       pitch: pitch,
       goals: @matches_app.build_goals([
