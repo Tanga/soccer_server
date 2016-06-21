@@ -11,12 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160615023754) do
+ActiveRecord::Schema.define(version: 20160621031134) do
 
   create_table "fixtures", force: :cascade do |t|
     t.integer "pitch_id"
-    t.integer "season"
-    t.integer "match_id"
+    t.integer "result_id"
     t.date    "date"
   end
 
@@ -28,17 +27,7 @@ ActiveRecord::Schema.define(version: 20160615023754) do
   create_table "goals", force: :cascade do |t|
     t.time    "time"
     t.integer "player_id"
-    t.integer "team_id"
-    t.integer "match_id"
-  end
-
-  create_table "matches", force: :cascade do |t|
-    t.integer "pitch_id"
-  end
-
-  create_table "matches_teams", force: :cascade do |t|
-    t.integer "match_id"
-    t.integer "team_id"
+    t.integer "result_id"
   end
 
   create_table "pitches", force: :cascade do |t|
@@ -48,6 +37,11 @@ ActiveRecord::Schema.define(version: 20160615023754) do
   create_table "players", force: :cascade do |t|
     t.string  "name"
     t.integer "team_id"
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.datetime "time"
+    t.integer  "player_id"
   end
 
   create_table "teams", force: :cascade do |t|

@@ -4,8 +4,8 @@ module ARRepo
     # model will be used with the SQL Adapter with the intent
     # to provide the exact same interface as the corresponding
     # domain model Players::Player
-    class Player < ActiveRecord::Base
-      belongs_to :team
+    class Result < ActiveRecord::Base
+      has_many :goals
     end
   end
 end
