@@ -26,10 +26,6 @@ describe <%= name.capitalize %>::App do
     end
   end
 
-  describe '#update' do
-    xit 'should update'
-  end
-
   def create_<%= head_name %>
     subject.create <%= attributes.keys.map{|attribute| "#{attribute}: #{attribute}"}.join(', ') %>
   end
