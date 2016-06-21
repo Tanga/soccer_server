@@ -39,6 +39,6 @@ class SeedsController < ApplicationController
     fixture  = @fixtures_app.read(fixture.id)
 
     # Show it as json (Thanks Rails!)
-    render json: {fixture: fixture}
+    render json: {fixture: fixture.as_json(methods: :result)}
   end
 end

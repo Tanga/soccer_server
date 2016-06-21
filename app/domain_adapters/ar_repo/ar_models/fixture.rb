@@ -8,6 +8,10 @@ module ARRepo
       has_and_belongs_to_many :teams
       belongs_to :pitch
       belongs_to :result
+
+      def result
+        Fixtures::Result.new(goals: Result.find(self[:result_id]).goals)
+      end
     end
   end
 end
