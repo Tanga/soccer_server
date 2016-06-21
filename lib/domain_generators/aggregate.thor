@@ -5,7 +5,7 @@ module DomainGenerators
 
     argument :name
     argument :head_name
-    argument :attributes, type: :array
+    argument :attributes, type: :hash
 
     class_option :test_framework, :default => :rspec
 
