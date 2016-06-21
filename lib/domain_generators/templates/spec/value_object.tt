@@ -22,6 +22,6 @@ describe <%= module_name.capitalize %>::<%= name.capitalize %> do
       "\t\tdescribe '##{attribute}' do\n" +
         "\t\t\tit { expect(subject.#{attribute}).to eq #{attribute}}\n" +
       "\t\tend"
-    end.join() %>
+    end.join("\n") %>
   end
 end
