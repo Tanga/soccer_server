@@ -7,33 +7,21 @@ class SeedsController < ApplicationController
     @pitches_app   = Pitches::App.new  #repository: Pitches::SQLRepository
     @teams_app     = Teams::App.new    #repository: Teams::SQLRepository
     @players_app   = Players::App.new  #repository: Players::SQLRepository
-    @matches_app   = Matches::App.new  #repository: Matches::SQLRepository
   end
 
   def new
-    pitch      = @pitches_app.create(name: "My backyard")
-    harrison   = @teams_app.create(name: "Harrison")
-    charleston = @teams_app.create(name: "Charleston")
-
-    chris      = @players_app.create(name: 'Chris', team: harrison)
-    carlos     = @players_app.create(name: 'Carlos', team: charleston)
-
-    match = @matches_app.create(
-      teams: [harrison, charleston],
-      pitch: pitch,
-      goals: @matches_app.build_goals([
-        { team: charleston, time: 1.minute.from_now, player: chris },
-        { team: charleston, time: 2.minutes.from_now, player: carlos }
-      ])
-    )
-
-    fixture = @fixtures_app.create(
-      season: 2016,
-      date: Date.today,
-      match: match,
-      pitch: pitch,
-      teams: [harrison, charleston]
-    )
+    pitch    = @pitches_app.create(name: "My Backyard")
+    westside = @teams_app.create(name: "Westside")
+    eastside = @teams_app.create(name: "Eastside")
+    joe      = @players_app.create(name: "Joe", team: westside)
+    carlos   = @players_app.create(name: "Carlos", team: eastside)
+    fixture  = @fixtures_app.create(teams: [eastside, westside], pitch: pitch)
+    goal1    = Fixtures::Goal.new(player: joe, time: 10.minutes.ago)
+    goal2    = Fixtures::Goal.new(player: carlos, time: 11.minutes.ago)
+    goal3    = Fixtures::Goal.new(player: carlos, time: 11.minutes.ago)
+    result   = Fixtures::Result.new(goals: [goal1, goal2, goal3])
+    @fixtures_app.update(fixture.id, result: result)
+    fixture  = @fixtures_app.read(fixture.id)
 
     render json: {fixture: fixture}
   end
