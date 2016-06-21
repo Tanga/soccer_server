@@ -3,14 +3,22 @@ require 'rails_helper'
 describe <%= module_name.capitalize %>::<%= name.capitalize %> do
   subject { described_class.new }
 
-  <%= attributes.map{|attribute| "let(:#{attribute}) { double('#{attribute.capitalize}') }"}.join("\n\t") %>
+  <%= attributes.keys.map do |attribute|
+    if attributes[attribute].include?("[")
+      type = attributes[attribute].split("[")[1].split("]")[0]
+      "let(:#{type}) { double('#{type.capitalize}') }\n" +
+      "\tlet(:#{attribute}) { [#{type}] }"
+    else
+      "let(:#{attribute}) { double('#{attribute.capitalize}') }"
+    end
+  end.join("\n\t") %>
 
   describe 'attributes' do
     subject do
-      described_class.new(<%= attributes.map{|attribute| "#{attribute}: #{attribute}"}.join(", ") %> )
+      described_class.new(<%= attributes.keys.map{|attribute| "#{attribute}: #{attribute}"}.join(", ") %> )
     end
 
-    <%= attributes.map do |attribute|
+    <%= attributes.keys.map do |attribute|
       "\t\tdescribe '##{attribute}' do\n" +
         "\t\t\tit { expect(subject.#{attribute}).to eq #{attribute}}\n" +
       "\t\tend"

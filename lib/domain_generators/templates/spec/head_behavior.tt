@@ -2,12 +2,12 @@
 RSpec.shared_examples "a Domain <%= head_name.capitalize %>" do
   describe 'attributes' do
     subject do
-      described_class.new(id: 1, <%= attributes.map{|attribute| "#{attribute}: #{attribute}"}.join(", ") %> )
+      described_class.new(id: 1, <%= attributes.keys.map{|attribute| "#{attribute}: #{attribute}"}.join(", ") %> )
     end
 
     describe '#id' do
       it { expect(subject.id).to eq 1 }
-    end<%= attributes.map do |attribute|
+    end<%= attributes.keys.map do |attribute|
       "\n\n\t\tdescribe '##{attribute}' do\n" +
         "\t\t\tit { expect(subject.#{attribute}).to eq #{attribute}}\n" +
       "\t\tend"

@@ -4,10 +4,10 @@ module <%= name.capitalize %>
   # that is handled by the Repository and operated on by the application.
 
   class <%= head_name.capitalize %>
-    attr_accessor :id, :<%= attributes.map{|attribute, type| attribute}.join(', :') %>
-    def initialize(id:, <%= attributes.map{|attribute, type| attribute}.join(':, ') %>:)
+    attr_accessor :id, :<%= attributes.keys.map{|attribute, type| attribute}.join(', :') %>
+    def initialize(id:, <%= attributes.keys.map{|attribute, type| attribute}.join(':, ') %>:)
       @id = id
-      <%= attributes.map{|attribute, type| '@' + attribute + ' = ' + attribute}.join("\n\t\t\t") %>
+      <%= attributes.keys.map{|attribute, type| '@' + attribute + ' = ' + attribute}.join("\n\t\t\t") %>
     end
   end
 end
