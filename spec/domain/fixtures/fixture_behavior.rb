@@ -13,10 +13,6 @@ RSpec.shared_examples "a Domain Fixture" do
 			it { expect(subject.teams).to eq teams}
 		end
 
-		describe '#result' do
-			it { expect(subject.result).to eq result}
-		end
-
 		describe '#pitch' do
 			it { expect(subject.pitch).to eq pitch}
 		end

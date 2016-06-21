@@ -28,9 +28,6 @@ describe Fixtures::App do
     end
   end
 
-  describe '#update' do
-    xit 'should update'
-  end
 
   def create_fixture
     subject.create teams: teams, result: result, pitch: pitch

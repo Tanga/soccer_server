@@ -26,9 +26,6 @@ describe Pitches::App do
     end
   end
 
-  describe '#update' do
-    xit 'should update'
-  end
 
   def create_pitch
     subject.create name: name

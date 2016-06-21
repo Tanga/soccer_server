@@ -27,10 +27,6 @@ describe Players::App do
     end
   end
 
-  describe '#update' do
-    xit 'should update'
-  end
-
   def create_player
     subject.create team: team, name: name
   end

@@ -26,10 +26,6 @@ describe Teams::App do
     end
   end
 
-  describe '#update' do
-    xit 'should update'
-  end
-
   def create_team
     subject.create name: name
   end
