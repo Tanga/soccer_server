@@ -8,6 +8,7 @@ describe Fixtures::Fixture do
 	let(:teams) { [team] }
 	let(:result) { double('Result') }
 	let(:pitch) { double('Pitch') }
+  let(:match) { double('Match', result: result) }
 
   it_should_behave_like("a Domain Fixture")
 end

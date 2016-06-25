@@ -6,6 +6,7 @@ describe Fixtures::App do
   let(:teams) { double("Teams") }
 	let(:result) { double("Result") }
 	let(:pitch) { double("Pitch") }
+  let(:match) { double("Match")  }
 
   describe '#create' do
     it 'creates a Fixture' do
@@ -28,8 +29,7 @@ describe Fixtures::App do
     end
   end
 
-
   def create_fixture
-    subject.create teams: teams, result: result, pitch: pitch
+    subject.create teams: teams, pitch: pitch, match: match
   end
 end

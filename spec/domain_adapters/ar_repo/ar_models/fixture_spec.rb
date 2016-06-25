@@ -9,6 +9,8 @@ module ARRepo::ARModels
     let(:goal)   { Goal.create(player: player) }
     let(:result) { Result.create(goals: [goal]) }
     let(:pitch)  { Pitch.create }
+    let(:match)  { Match.create }
+
 
 
     it_should_behave_like("a Domain Fixture")

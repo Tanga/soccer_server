@@ -5,6 +5,7 @@ module ARRepo
     # to provide the exact same interface as the corresponding
     # domain model Matches::Match
     class Match < ActiveRecord::Base
+      belongs_to :result
     end
   end
 end

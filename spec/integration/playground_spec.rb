@@ -23,7 +23,8 @@ describe 'Playground' do
     # SCHEDULE
     fixture  = Fixtures::App.new.create(
       teams: [eastside, westside],
-      pitch: pitch
+      pitch: pitch,
+      match: match
     )
 
     # PLAY THE MATCH
@@ -37,10 +38,8 @@ describe 'Playground' do
       ]
     )
 
-    match = Matches::App.new.read(match.id)
-
     # RECORD THE RESULT
-    Fixtures::App.new.update(fixture.id, result: match.result)
+    match = Matches::App.new.read(match.id)
     fixture = Fixtures::App.new.read(fixture.id)
     expect(fixture.result.type).to eq 'tie'
     expect(match.result.type).to eq 'tie'
