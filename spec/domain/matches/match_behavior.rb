@@ -25,7 +25,7 @@ RSpec.shared_examples "a Domain Match" do
     end
 
     describe '#result' do
-      it { expect(subject.result).to be_a(Fixtures::Result) }
+      it { expect(subject.result).to be_a(Matches::Result) }
     end
 
 		describe '#datetime' do

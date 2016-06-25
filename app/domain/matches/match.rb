@@ -18,7 +18,7 @@ module Matches
     end
 
     def result
-      Fixtures::Result.new(goals: @goals)
+      Matches::Result.new(goals: @goals)
     end
   end
 end

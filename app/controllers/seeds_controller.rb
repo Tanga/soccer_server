@@ -30,7 +30,7 @@ class SeedsController < ApplicationController
     goal3    = Fixtures::Goal.new(player: carlos, time: 11.minutes.ago)
 
     # Result
-    result   = Fixtures::Result.new(goals: [goal1, goal2, goal3])
+    result   = Matches::Result.new(goals: [goal1, goal2, goal3])
 
     # Add the Result to the Fixture
     @fixtures_app.update(fixture.id, result: result)

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Fixtures::Result do
+describe Matches::Result do
   subject { described_class.new }
 
   let(:team1) { double('Team1') }

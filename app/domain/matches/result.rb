@@ -1,4 +1,4 @@
-module Fixtures
+module Matches
   class Result
     attr_accessor :goals, :winner, :type
     def initialize(goals:)
