@@ -1,10 +1,9 @@
 module Fixtures
   class Result
-    attr_accessor :goals, :winner, :loser, :type
+    attr_accessor :goals, :winner, :type
     def initialize(goals:)
       @goals = goals
       @winner = nil
-      @loser = nil
       @type = "tie"
 
       return [] if goals.empty?
@@ -16,7 +15,6 @@ module Fixtures
       else
         team_goals = team_goals.to_a.sort.reverse
         @winner = team_goals.first[1]
-        @loser = team_goals.last[1]
         @type = "win/lose"
       end
     end
