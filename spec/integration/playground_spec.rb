@@ -33,7 +33,7 @@ describe 'Playground' do
         player: joe,
         time: 10.minutes.ago),
       Fixtures::Goal.new(
-        player: joe,
+        player: carlos,
         time: 10.minutes.ago)
       ]
     )
