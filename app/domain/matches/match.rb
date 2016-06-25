@@ -9,7 +9,7 @@ module Matches
       @id = id
       @pitch = pitch
       @teams = teams
-			@datetime = datetime
+      @datetime = datetime
       @goals = []
     end
 
