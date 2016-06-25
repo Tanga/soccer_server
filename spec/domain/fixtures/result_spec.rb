@@ -21,8 +21,30 @@ describe Fixtures::Result do
 			it { expect(subject.goals).to eq goals}
 		end
 
-    context 'win/lose' do
+    context 'one team scores more goals' do
       let(:goals) { [goal1, goal2, goal3] }
+      describe '#winner' do
+        it { expect(subject.winner).to eq team1}
+      end
+
+      describe '#type' do
+        it { expect(subject.type).to eq 'win/lose'}
+      end
+    end
+
+    context 'only one goal' do
+      let(:goals) { [goal1] }
+      describe '#winner' do
+        it { expect(subject.winner).to eq team1}
+      end
+
+      describe '#type' do
+        it { expect(subject.type).to eq 'win/lose'}
+      end
+    end
+
+    context 'all goals by the same team' do
+      let(:goals) { [goal1, goal1] }
       describe '#winner' do
         it { expect(subject.winner).to eq team1}
       end
