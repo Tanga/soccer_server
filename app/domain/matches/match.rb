@@ -8,7 +8,7 @@ module Matches
     def initialize(id:, pitch:, teams:, datetime:)
       @id = id
       @pitch = pitch
-			@teams = teams
+      @teams = teams
 			@datetime = datetime
       @goals = []
     end
