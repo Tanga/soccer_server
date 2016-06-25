@@ -10,6 +10,10 @@ module Fixtures
       configure_as_win_lose
     end
 
+    def == other
+      other.goals == goals
+    end
+
     private
 
     def configure_as_win_lose
