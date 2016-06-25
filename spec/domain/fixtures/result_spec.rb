@@ -27,10 +27,6 @@ describe Fixtures::Result do
         it { expect(subject.winner).to eq team1}
       end
 
-      describe '#loser' do
-        it { expect(subject.loser).to eq team2}
-      end
-
       describe '#type' do
         it { expect(subject.type).to eq 'win/lose'}
       end
@@ -42,10 +38,6 @@ describe Fixtures::Result do
         it { expect(subject.winner).to eq nil}
       end
 
-      describe '#loser' do
-        it { expect(subject.loser).to eq nil}
-      end
-
       describe '#type' do
         it { expect(subject.type).to eq 'tie'}
       end
@@ -55,10 +47,6 @@ describe Fixtures::Result do
       let(:goals) { [goal1, goal3] }
       describe '#winner' do
         it { expect(subject.winner).to eq nil}
-      end
-
-      describe '#loser' do
-        it { expect(subject.loser).to eq nil}
       end
 
       describe '#type' do
