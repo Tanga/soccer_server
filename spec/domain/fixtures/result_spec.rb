@@ -12,6 +12,14 @@ describe Fixtures::Result do
   let(:goal3) { double('Goal', player: player2) }
   let(:goals) { [goal1] }
 
+  describe "#==" do
+    it 'should be equal if the goals are the same' do
+      r1 = described_class.new(goals: goals)
+      r2 = described_class.new(goals: goals)
+      expect(r1).to eq r2
+    end
+  end
+
   describe 'attributes' do
     subject do
       described_class.new(goals: goals)

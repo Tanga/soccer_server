@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Playground' do
-  it do
+  it 'plays a soccer match' do
     # PITCH
     pitch    = Pitches::App.new.create(name: "My Backyard")
 
@@ -38,10 +38,11 @@ describe 'Playground' do
       ]
     )
 
-    # RECORD THE RESULT
+    # CHECK THE RESULT
     match = Matches::App.new.read(match.id)
     fixture = Fixtures::App.new.read(fixture.id)
-    expect(fixture.result.type).to eq 'tie'
+
     expect(match.result.type).to eq 'tie'
+    expect(fixture.result).to eq match.result
   end
 end
