@@ -5,11 +5,10 @@ module Fixtures
 
   class Fixture
     attr_accessor :id, :teams, :pitch, :match
-    delegate :result, to: :@match
+    delegate :result, :teams, to: :@match
 
-    def initialize(id:, teams:, pitch:, match:)
+    def initialize(id:, pitch:, match:)
       @id = id
-      @teams = teams
 			@pitch = pitch
       @match = match
     end

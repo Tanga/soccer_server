@@ -6,6 +6,7 @@ module ARRepo
     # domain model Matches::Match
     class Match < ActiveRecord::Base
       belongs_to :result
+      has_and_belongs_to_many :teams
     end
   end
 end

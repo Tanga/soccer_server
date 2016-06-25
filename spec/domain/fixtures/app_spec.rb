@@ -3,7 +3,6 @@ require 'rails_helper'
 describe Fixtures::App do
   subject { described_class.new }
 
-  let(:teams) { double("Teams") }
 	let(:result) { double("Result") }
 	let(:pitch) { double("Pitch") }
   let(:match) { double("Match")  }
@@ -30,6 +29,6 @@ describe Fixtures::App do
   end
 
   def create_fixture
-    subject.create teams: teams, pitch: pitch, match: match
+    subject.create pitch: pitch, match: match
   end
 end

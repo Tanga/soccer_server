@@ -2,16 +2,16 @@
 RSpec.shared_examples "a Domain Fixture" do
   describe 'attributes' do
     subject do
-      described_class.new(id: 1, teams: teams, pitch: pitch, match: match )
+      described_class.new(id: 1, pitch: pitch, match: match )
     end
 
     describe '#id' do
       it { expect(subject.id).to eq 1 }
     end
 
-		describe '#teams' do
-			it { expect(subject.teams).to eq teams}
-		end
+    describe '#teams' do
+      it { expect(subject.teams).to eq match.teams }
+    end
 
 		describe '#pitch' do
 			it { expect(subject.pitch).to eq pitch}

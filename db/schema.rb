@@ -20,11 +20,6 @@ ActiveRecord::Schema.define(version: 20160625195232) do
     t.date    "date"
   end
 
-  create_table "fixtures_teams", force: :cascade do |t|
-    t.integer "fixture_id"
-    t.integer "team_id"
-  end
-
   create_table "goals", force: :cascade do |t|
     t.time    "time"
     t.integer "player_id"
@@ -33,6 +28,11 @@ ActiveRecord::Schema.define(version: 20160625195232) do
 
   create_table "matches", force: :cascade do |t|
     t.datetime "datetime"
+  end
+
+  create_table "matches_teams", force: :cascade do |t|
+    t.integer "match_id"
+    t.integer "team_id"
   end
 
   create_table "pitches", force: :cascade do |t|

@@ -10,11 +10,11 @@ RSpec.shared_examples "a Domain Match" do
     end
 
 		describe '#pitch' do
-			it { expect(subject.pitch).to eq pitch}
+			it { expect(subject.pitch).to eq pitch }
 		end
 
 		describe '#teams' do
-			it { expect(subject.teams).to eq teams}
+			it { expect(subject.teams).to eq teams }
 		end
 
     describe '#goals=' do

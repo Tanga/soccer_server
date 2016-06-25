@@ -5,8 +5,7 @@ module ARRepo
     # to provide the exact same interface as the corresponding
     # domain model Fixtures::Fixture
     class Fixture < ActiveRecord::Base
-      delegate :result, to: :match
-      has_and_belongs_to_many :teams
+      delegate :result, :teams, to: :match
       belongs_to :pitch
       belongs_to :match
     end

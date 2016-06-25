@@ -22,7 +22,6 @@ describe 'Playground' do
 
     # SCHEDULE
     fixture  = Fixtures::App.new.create(
-      teams: [eastside, westside],
       pitch: pitch,
       match: match
     )
