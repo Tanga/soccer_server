@@ -30,6 +30,9 @@ describe 'Playground' do
     Matches::App.new.update(match.id, goals: [
       Fixtures::Goal.new(
         player: joe,
+        time: 10.minutes.ago),
+      Fixtures::Goal.new(
+        player: joe,
         time: 10.minutes.ago)
       ]
     )
