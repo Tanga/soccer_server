@@ -36,7 +36,22 @@ describe Fixtures::Result do
       end
     end
 
-    context 'tie' do
+    context 'no goals' do
+      let(:goals) {[]}
+      describe '#winner' do
+        it { expect(subject.winner).to eq nil}
+      end
+
+      describe '#loser' do
+        it { expect(subject.loser).to eq nil}
+      end
+
+      describe '#type' do
+        it { expect(subject.type).to eq 'tie'}
+      end
+    end
+
+    context 'same number of goals' do
       let(:goals) { [goal1, goal3] }
       describe '#winner' do
         it { expect(subject.winner).to eq nil}
