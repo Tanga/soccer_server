@@ -1,4 +1,3 @@
-require 'pry'
 module DomainGenerators
   class ValueObject < Thor::Group
     include Thor::Actions
