@@ -1,4 +1,3 @@
-require 'spec_helper'
 require_relative '<%= head_name %>_behavior.rb'
 
 describe <%= name.capitalize %>::<%= head_name.capitalize %> do
