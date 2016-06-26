@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 module SoccerHexagon
   describe 'Playground' do
@@ -18,7 +18,7 @@ module SoccerHexagon
       match = Matches::App.new.create(
         pitch: pitch,
         teams: [eastside, westside],
-        datetime: Date.current
+        datetime: Date.today
       )
 
       # SCHEDULE
@@ -31,10 +31,10 @@ module SoccerHexagon
       Matches::App.new.update(match.id, goals: [
         Fixtures::Goal.new(
           player: joe,
-          time: 10.minutes.ago),
+          time: Time.now),
         Fixtures::Goal.new(
           player: carlos,
-          time: 10.minutes.ago)
+          time: Time.now)
         ]
       )
 
