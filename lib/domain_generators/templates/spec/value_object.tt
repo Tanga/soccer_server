@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe <%= module_name.capitalize %>::<%= name.capitalize %> do
   subject { described_class.new }
