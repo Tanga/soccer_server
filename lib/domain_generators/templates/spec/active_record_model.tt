@@ -1,4 +1,3 @@
-require 'spec_helper.rb'
 require File.expand_path('spec/domain/<%= name %>/<%= head_name %>_behavior.rb')
 
 module ARRepo::ARModels
