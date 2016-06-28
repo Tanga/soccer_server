@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe SoccerHexagon::Players::SQLRepository do
+describe Repositories::Match do
   subject { described_class.new }
   describe '#create' do
   end

@@ -1,8 +1,9 @@
 require 'spec_helper'
 
-describe SoccerHexagon::Teams::SQLRepository do
-  subject { described_class.new }
+describe SoccerHexagon::Fixtures::SQLRepository do
+  subject { described_class }
   describe '#create' do
+    it { subject.create }
   end
   describe '#read' do
   end
