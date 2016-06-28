@@ -1,5 +1,7 @@
+require 'active_support/inflector'
 module DomainGenerators
   class Hexagon < Thor::Group
+    # include ActiveSupport::Inflector
     include Thor::Actions
 
     argument :name
@@ -8,8 +10,12 @@ module DomainGenerators
       File.dirname(__FILE__)
     end
 
+    def create_hexagon_file
+      template('templates/hexagon.tt', "../#{name}.rb")
+    end
+
     def create_hexagon_folder
-      directory("../../app/domain", "../#{name}")
+      directory('templates/hexagon', "../#{name}")
     end
   end
 end

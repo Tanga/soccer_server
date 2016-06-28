@@ -1,30 +1,32 @@
-describe <%= name.capitalize %>::App do
-  subject { described_class.new }
+module <%= hexagon_name.camelize %>
+  describe <%= name.camelize %>::App do
+    subject { described_class.new }
 
-  <%= attributes.keys.map{|attribute| "let(:#{attribute}) { double(\"#{attribute.capitalize}\") }"}.join("\n\t") %>
+    <%= attributes.keys.map{|attribute| "let(:#{attribute}) { double(\"#{attribute.camelize}\") }"}.join("\n\t") %>
 
-  describe '#create' do
-    it 'creates a <%= head_name.capitalize %>' do
-      expect(create_<%= head_name %>).to be
+    describe '#create' do
+      it 'creates a <%= head_name.camelize %>' do
+        expect(create_<%= head_name %>).to be
+      end
     end
-  end
 
-  describe '#read' do
-    it 'should return a <%= head_name.capitalize %> by id' do
-      create_<%= head_name %>
-      expect(subject.read(1)).to be
+    describe '#read' do
+      it 'should return a <%= head_name.camelize %> by id' do
+        create_<%= head_name %>
+        expect(subject.read(1)).to be
+      end
     end
-  end
 
-  describe '#destroy' do
-    it 'should destroy a <%= head_name.capitalize %>' do
-      <%= head_name %> = create_<%= head_name %>
-      subject.delete(1)
-      expect(subject.read(1)).to be_nil
+    describe '#destroy' do
+      it 'should destroy a <%= head_name.camelize %>' do
+        <%= head_name %> = create_<%= head_name %>
+        subject.delete(1)
+        expect(subject.read(1)).to be_nil
+      end
     end
-  end
 
-  def create_<%= head_name %>
-    subject.create <%= attributes.keys.map{|attribute| "#{attribute}: #{attribute}"}.join(', ') %>
+    def create_<%= head_name %>
+      subject.create <%= attributes.keys.map{|attribute| "#{attribute}: #{attribute}"}.join(', ') %>
+    end
   end
 end
