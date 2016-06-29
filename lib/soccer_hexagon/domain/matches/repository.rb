@@ -9,7 +9,7 @@ module SoccerHexagon
       @collection = {}
 
       def self.create(attributes={})
-        next_id = @collection.keys.length + 1
+        next_id = (@collection.keys.length + 1).to_s
         @collection[next_id] = Match.new(attributes.merge(id: next_id))
       end
 
@@ -33,6 +33,10 @@ module SoccerHexagon
 
       def self.delete_all
         @collection = {}
+      end
+
+      def self.query
+        @collection.values
       end
     end
   end

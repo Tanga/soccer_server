@@ -9,7 +9,7 @@ module SoccerHexagon
       @collection = {}
 
       def self.create(attributes={})
-        next_id = @collection.keys.length + 1
+        next_id = (@collection.keys.length + 1).to_s
         @collection[next_id] = Pitch.new(attributes.merge(id: next_id))
       end
 

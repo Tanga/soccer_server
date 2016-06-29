@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :fixtures
+  resources :matches
 
   root :controller => "seeds", :action => "new"
   resources :seeds

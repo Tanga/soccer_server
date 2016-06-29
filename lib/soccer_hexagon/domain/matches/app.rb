@@ -24,6 +24,9 @@ module SoccerHexagon
         @repository.delete(id)
       end
 
+      def query
+        @repository.query
+      end
     end
   end
 end
