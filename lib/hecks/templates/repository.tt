@@ -9,7 +9,7 @@ module <%= hexagon_name.camelize %>
       @collection = {}
 
       def self.create(attributes={})
-        next_id = @collection.keys.length + 1
+        next_id = (@collection.keys.length + 1).to_s
         @collection[next_id] = <%= head_name.capitalize %>.new(attributes.merge(id: next_id))
       end
 

@@ -13,8 +13,12 @@ module Repositories
     end
 
     def self.read(id)
-      result = ::Match.find(id)
+      result = ::<%= name.camelize %>.find(id)
       result
+    end
+
+    def self.query
+      <%= name.camelize %>.all
     end
   end
 end
