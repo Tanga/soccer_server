@@ -1,7 +1,6 @@
 require 'active_support/inflector'
 module DomainGenerators
   class Hexagon < Thor::Group
-    # include ActiveSupport::Inflector
     include Thor::Actions
 
     argument :name
