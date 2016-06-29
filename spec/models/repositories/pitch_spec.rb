@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 describe Repositories::Pitch do
   subject { described_class.new }
   describe '#create' do
