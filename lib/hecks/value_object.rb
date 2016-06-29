@@ -1,6 +1,7 @@
 class HecksValueObject < Thor::Group
   include Thor::Actions
 
+  argument :hexagon_name
   argument :module_name
   argument :name
   argument :attributes, type: :hash
@@ -12,10 +13,10 @@ class HecksValueObject < Thor::Group
   end
 
   def create_value_object
-    template('templates/value_object.tt', "../../app/domain/#{module_name}/#{name}.rb")
+    template('templates/value_object.tt', "lib/#{hexagon_name}/domain/#{module_name}/#{name}.rb")
   end
 
   def create_app_spec_file
-    template('templates/spec/value_object.tt', "../../spec/domain/#{module_name}/#{name}_spec.rb")
+    template('templates/spec/value_object.tt', "lib/#{hexagon_name}/spec/domain/#{module_name}/#{name}_spec.rb")
   end
 end

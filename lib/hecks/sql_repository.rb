@@ -14,7 +14,7 @@ class HecksSqlRepository < Thor::Group
   end
 
   def models_path
-    "../../app/models"
+    "app/models"
   end
 
   def repositories_path
@@ -22,7 +22,7 @@ class HecksSqlRepository < Thor::Group
   end
 
   def models_spec_path
-    "../../spec/models"
+    "spec/models"
   end
 
   def repositories_spec_path
