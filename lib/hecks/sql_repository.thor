@@ -1,5 +1,5 @@
 require 'pry'
-module DomainGenerators
+module Hecks
   class SqlRepository < Thor::Group
     include Thor::Actions
 

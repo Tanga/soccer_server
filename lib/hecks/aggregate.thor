@@ -1,5 +1,5 @@
 require 'pry'
-module DomainGenerators
+module Hecks
   class Aggregate < Thor::Group
     include Thor::Actions
 

@@ -1,4 +1,4 @@
-module DomainGenerators
+module Hecks
   class ValueObject < Thor::Group
     include Thor::Actions
 

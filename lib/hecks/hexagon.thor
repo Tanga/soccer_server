@@ -1,5 +1,5 @@
 require 'active_support/inflector'
-module DomainGenerators
+module Hecks
   class Hexagon < Thor::Group
     include Thor::Actions
 
