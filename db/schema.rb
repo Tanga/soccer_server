@@ -24,10 +24,12 @@ ActiveRecord::Schema.define(version: 20160625195232) do
     t.time    "time"
     t.integer "player_id"
     t.integer "result_id"
+    t.integer "match_id"
   end
 
   create_table "matches", force: :cascade do |t|
     t.datetime "datetime"
+    t.integer  "pitch_id"
   end
 
   create_table "matches_teams", force: :cascade do |t|
