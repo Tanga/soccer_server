@@ -5,7 +5,16 @@
 module Repositories
   class <%= name.camelize %>
     def self.create **args
-      <%= name.camelize %>.create args
+      ::<%= name.camelize %>.create args
+    end
+
+    def self.update(id, attributes)
+      find(id).update(attributes)
+    end
+
+    def self.read(id)
+      result = ::Match.find(id)
+      result
     end
   end
 end
