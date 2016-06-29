@@ -1,9 +1,7 @@
-require 'pry'
-module Hecks
-  class Aggregate < Thor::Group
+  class HecksAggregate < Thor::Group
     include Thor::Actions
 
-    argument :hexagon_name
+    argument :hexagon_name, type: :string
     argument :name
     argument :head_name
     argument :attributes, type: :hash
@@ -66,4 +64,3 @@ module Hecks
     #   template('templates/spec/active_record_model.tt', "#{spec_path}_adapters/ar_repo/ar_models/#{head_name}_spec.rb")
     # end
   end
-end
