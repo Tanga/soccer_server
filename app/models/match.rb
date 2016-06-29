@@ -4,5 +4,7 @@
 # domain model Matches::Match
 class Match < ActiveRecord::Base
   belongs_to :result
+  belongs_to :pitch
+  has_many :goals
   has_and_belongs_to_many :teams
 end

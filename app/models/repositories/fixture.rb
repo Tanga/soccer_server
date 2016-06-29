@@ -13,7 +13,7 @@ module Repositories
     end
 
     def self.read id
-      Fixture.find id
+      ::Fixture.find id
     end
   end
 end
