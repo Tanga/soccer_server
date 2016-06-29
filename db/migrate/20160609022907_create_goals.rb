@@ -4,6 +4,7 @@ class CreateGoals < ActiveRecord::Migration
       t.time :time
       t.integer :player_id
       t.integer :result_id
+      t.integer :match_id
     end
   end
 end

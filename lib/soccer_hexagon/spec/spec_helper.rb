@@ -1,4 +1,6 @@
 require 'simplecov'
+require 'domain_helper'
+require_relative '../../soccer_hexagon/'
 
 SimpleCov.start
 

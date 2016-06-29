@@ -1,0 +1,7 @@
+module <%= hexagon_name.camelize %>
+  describe <%= name.camelize %>::Repository do
+    subject { described_class }
+    describe '#create' do
+    end
+  end
+end

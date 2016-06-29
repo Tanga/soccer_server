@@ -1,8 +1,0 @@
-module <%= module_name.capitalize %>
-  class <%= name.capitalize %>
-    attr_accessor :<%= attributes.map{|attribute, type| attribute}.join(', :') %>
-    def initialize(<%= attributes.map{|attribute, type| attribute}.join(':, ') %>:)
-      <%= attributes.map{|attribute, type| '@' + attribute + ' = ' + attribute}.join("\n\t\t\t") %>
-    end
-  end
-end
