@@ -23,9 +23,4 @@ class MatchesController < ApplicationController
     render json: Matches.delete(params[:id])
   end
 
-  private
-
-  def hexagon
-    @hexagon ||= SoccerHexagon.new Repositories
-  end
 end

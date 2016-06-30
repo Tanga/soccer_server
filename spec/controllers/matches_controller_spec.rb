@@ -1,13 +1,15 @@
 describe MatchesController do
   describe "GET index" do
     let(:match)   { double('Match', as_json: {name: "A Match"}) }
-    let(:hexagon) { double('Hexagon',
+
+    let(:hexagon) {
+      double('Hexagon',
       get_a_list_of_matches: [match],
-      create_a_match: match)
+      create_a_match:        match)
     }
 
     before do
-      stub_const('SoccerHexagon', hexagon)
+      controller.register_hexagon(hexagon)
     end
 
     describe "GET index" do

@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
   def register_hexagon(hexagon = SoccerHexagon.new(Repositories))
     @hexagon ||= hexagon
   end
+
+  def hexagon
+    @hexagon
+  end
 end
