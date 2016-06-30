@@ -13,15 +13,15 @@ module <%= hexagon_name.camelize %>
     describe '#read' do
       it 'should return a <%= head_name.camelize %> by id' do
         create_<%= head_name %>
-        expect(subject.read(1)).to be
+        expect(subject.read("1")).to be
       end
     end
 
     describe '#destroy' do
       it 'should destroy a <%= head_name.camelize %>' do
         <%= head_name %> = create_<%= head_name %>
-        subject.delete(1)
-        expect(subject.read(1)).to be_nil
+        subject.delete("1")
+        expect(subject.read("1")).to be_nil
       end
     end
 

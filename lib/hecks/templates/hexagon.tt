@@ -1,3 +1,6 @@
 Dir[File.dirname(__FILE__) + "/<%= name %>/domain/**/*.rb"].each do |file|
   require_relative file
+
+  class <% name.camelize %>
+  end
 end
