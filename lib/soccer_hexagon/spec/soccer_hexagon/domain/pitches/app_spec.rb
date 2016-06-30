@@ -14,15 +14,15 @@ describe SoccerHexagon::Pitches::App do
   describe '#read' do
     it 'should return a Pitch by id' do
       create_pitch
-      expect(subject.read(1)).to be
+      expect(subject.read("1")).to be
     end
   end
 
   describe '#destroy' do
     it 'should destroy a Pitch' do
       pitch = create_pitch
-      subject.delete(1)
-      expect(subject.read(1)).to be_nil
+      subject.delete("1")
+      expect(subject.read("1")).to be_nil
     end
   end
 

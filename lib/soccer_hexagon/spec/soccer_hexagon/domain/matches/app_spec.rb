@@ -16,15 +16,15 @@ describe SoccerHexagon::Matches::App do
   describe '#read' do
     it 'should return a Match by id' do
       create_match
-      expect(subject.read(1)).to be
+      expect(subject.read("1")).to be
     end
   end
 
   describe '#destroy' do
     it 'should destroy a Match' do
       match = create_match
-      subject.delete(1)
-      expect(subject.read(1)).to be_nil
+      subject.delete("1")
+      expect(subject.read("1")).to be_nil
     end
   end
 

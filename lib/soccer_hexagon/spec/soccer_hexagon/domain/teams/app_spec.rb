@@ -14,15 +14,15 @@ describe SoccerHexagon::Teams::App do
   describe '#read' do
     it 'should return a Team by id' do
       create_team
-      expect(subject.read(1)).to be
+      expect(subject.read("1")).to be
     end
   end
 
   describe '#destroy' do
     it 'should destroy a Team' do
       team = create_team
-      subject.delete(1)
-      expect(subject.read(1)).to be_nil
+      subject.delete("1")
+      expect(subject.read("1")).to be_nil
     end
   end
 
