@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module SoccerHexagon
+class SoccerHexagon
   describe 'Playground' do
     it 'plays a soccer match' do
       # PITCH
