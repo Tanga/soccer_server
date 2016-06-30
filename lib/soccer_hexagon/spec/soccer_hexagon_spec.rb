@@ -8,9 +8,9 @@ describe SoccerHexagon do
   describe "#create_a_match" do
     it do
       subject.create_a_match(
-      on: Date.today,
-      between: teams,
-      at_location: pitch)
+        on: Date.today,
+        between: teams,
+        at_location: pitch)
     end
   end
 end
