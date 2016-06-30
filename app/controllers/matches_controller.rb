@@ -11,11 +11,6 @@ class MatchesController < ApplicationController
       between:     params[:team_ids],
       at_location: params[:pitch_id]
     )
-
-    # render json: Matches.create(
-    #   datetime: Date.current,
-    #   teams: params[:teams].map{ |team_id| Teams.read(team_id) },
-    #   pitch: Pitches.read(params[:pitch_id]))
   end
 
   def show
