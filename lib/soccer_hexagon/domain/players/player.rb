@@ -1,4 +1,4 @@
-module SoccerHexagon
+class SoccerHexagon
   module Players
     # This is the head of the Players Aggregate.  An
     # Aggregate head is generally an Entity and is the only object

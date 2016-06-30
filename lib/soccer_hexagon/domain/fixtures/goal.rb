@@ -1,4 +1,4 @@
-module SoccerHexagon
+class SoccerHexagon
   module Fixtures
     class Goal
       attr_accessor :player, :time

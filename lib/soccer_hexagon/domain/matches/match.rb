@@ -1,4 +1,4 @@
-module SoccerHexagon
+class SoccerHexagon
   module Matches
     # This is the head of the Matches Aggregate.  An
     # Aggregate head is generally an Entity and is the only object

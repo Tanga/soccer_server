@@ -1,4 +1,4 @@
-module SoccerHexagon
+class SoccerHexagon
   module Pitches
     # This is the head of the Pitches Aggregate.  An
     # Aggregate head is generally an Entity and is the only object

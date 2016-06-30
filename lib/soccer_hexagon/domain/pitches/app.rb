@@ -1,4 +1,4 @@
-module SoccerHexagon
+class SoccerHexagon
   module Pitches
     # This is an app that clients will be required to interact
     # with to perform operations on the Pitches Aggregate

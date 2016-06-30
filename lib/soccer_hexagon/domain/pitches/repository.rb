@@ -1,4 +1,4 @@
-module SoccerHexagon
+class SoccerHexagon
   module Pitches
     # This is the default "in memory" Pitches Repository.
     # When developing the domain, the in-memory repo makes it things fast to test

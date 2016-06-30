@@ -1,4 +1,4 @@
-module SoccerHexagon
+class SoccerHexagon
   module Players
     # This is the default "in memory" Players Repository.
     # When developing the domain, the in-memory repo makes it things fast to test

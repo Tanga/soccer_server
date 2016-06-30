@@ -1,4 +1,4 @@
-module SoccerHexagon
+class SoccerHexagon
   module Teams
     # This is the head of the Teams Aggregate.  An
     # Aggregate head is generally an Entity and is the only object

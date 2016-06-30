@@ -1,4 +1,4 @@
-module SoccerHexagon
+class SoccerHexagon
   module Matches
     class Result
       attr_accessor :goals, :winner, :type

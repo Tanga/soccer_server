@@ -1,4 +1,4 @@
-module SoccerHexagon
+class SoccerHexagon
   module Fixtures
     # This is the head of the Fixtures Aggregate.  An
     # Aggregate head is generally an Entity and is the only object
