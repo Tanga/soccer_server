@@ -5,7 +5,7 @@ end
 class <%= name.camelize %>
   def initialize repositories=nil
     @repositories = self.class.constants.map do |c|
-      [c.downcase, Object.const_get('<%= name %>.camelize::' + c.to_s + '::App').new]
+      [c.downcase, Object.const_get('<%= name.camelize %>::Domain::' + c.to_s + '::App').new]
     end.to_h
   end
 end

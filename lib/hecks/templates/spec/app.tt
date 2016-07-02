@@ -1,5 +1,5 @@
 module <%= hexagon_name.camelize %>
-  describe <%= name.camelize %>::App do
+  describe <%= name.camelize %>::Domain::App do
     subject { described_class.new }
 
     <%= attributes.keys.map{|attribute| "let(:#{attribute}) { double(\"#{attribute.camelize}\") }"}.join("\n\t") %>

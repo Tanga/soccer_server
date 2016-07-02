@@ -1,4 +1,4 @@
-module <%= hexagon_name.camelize %>
+module <%= hexagon_name.camelize %>::Domain
   describe <%= module_name.camelize %>::<%= name.camelize %> do
     subject { described_class.new }
 
