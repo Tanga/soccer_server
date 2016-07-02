@@ -22,5 +22,4 @@ class MatchesController < ApplicationController
   def delete
     render json: Matches.delete(params[:id])
   end
-
 end
