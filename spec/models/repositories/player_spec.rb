@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Repositories::Player do
+describe Repositories::Players do
   subject { described_class.new }
   describe '#create' do
   end

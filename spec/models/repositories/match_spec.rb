@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Repositories::Match do
+describe Repositories::Matches do
   subject { described_class.new }
   describe '#create' do
   end

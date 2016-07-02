@@ -1,6 +1,6 @@
 # Fixtures Controller Serves up some Soccer Fixtures
 class SeedsController < ApplicationController
-  Goal = SoccerHexagon::Fixtures::Goal
+  Goal = SoccerHexagon::Domain::Fixtures::Goal
 
   before_filter :initialize_apps
 
@@ -37,10 +37,10 @@ class SeedsController < ApplicationController
   private
 
   def initialize_apps
-    @fixtures_app  = SoccerHexagon::Fixtures::App.new #repository: Repositories::Fixture
-    @pitches_app   = SoccerHexagon::Pitches::App.new  #repository: Repositories::Pitch
-    @teams_app     = SoccerHexagon::Teams::App.new    #repository: Repositories::Team
-    @players_app   = SoccerHexagon::Players::App.new  #repository: Repositories::Player
-    @matches_app   = SoccerHexagon::Matches::App.new  #repository: Repositories::Match
+    @fixtures_app  = SoccerHexagon::Domain::Fixtures::App.new #repository: Repositories::Fixture
+    @pitches_app   = SoccerHexagon::Domain::Pitches::App.new  #repository: Repositories::Pitch
+    @teams_app     = SoccerHexagon::Domain::Teams::App.new    #repository: Repositories::Team
+    @players_app   = SoccerHexagon::Domain::Players::App.new  #repository: Repositories::Player
+    @matches_app   = SoccerHexagon::Domain::Matches::App.new  #repository: Repositories::Match
   end
 end

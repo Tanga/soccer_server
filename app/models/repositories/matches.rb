@@ -1,5 +1,5 @@
 module Repositories
-  class Match
+  class Matches
     def self.create **args
       ::Match.create args
     end

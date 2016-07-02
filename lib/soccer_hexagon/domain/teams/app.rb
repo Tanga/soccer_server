@@ -1,27 +1,29 @@
 class SoccerHexagon
-  module Teams
-    # This is an app that clients will be required to interact
-    # with to perform operations on the Teams Aggregate
+  module Domain
+    module Teams
+      # This is an app that clients will be required to interact
+      # with to perform operations on the Teams Aggregate
 
-    class App
-      def initialize(repository: Repository)
-        @repository = repository
-      end
+      class App
+        def initialize(repository: Repository)
+          @repository = repository
+        end
 
-      def create(args)
-        @repository.create(args)
-      end
+        def create(args)
+          @repository.create(args)
+        end
 
-      def update(id, attributes)
-        @repository.update(id, attributes)
-      end
+        def update(id, attributes)
+          @repository.update(id, attributes)
+        end
 
-      def read(id)
-        @repository.read(id)
-      end
+        def read(id)
+          @repository.read(id)
+        end
 
-      def delete(id)
-        @repository.delete(id)
+        def delete(id)
+          @repository.delete(id)
+        end
       end
     end
   end

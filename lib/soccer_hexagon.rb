@@ -2,15 +2,11 @@ Dir[File.dirname(__FILE__) + "/soccer_hexagon/domain/**/*.rb"].each do |file|
   require_relative file
 end
 
+require_relative 'soccer_hexagon/repository_container'
+
 class SoccerHexagon
   def initialize repositories=nil
-    if repositories
-      @repositories = repositories.constants.map{|repo| [repo.to_s.downcase, 0] }.to_h
-    else
-      @repositories = self.class.constants.map do |c|
-        [c.downcase, Object.const_get('SoccerHexagon::' + c.to_s + '::App').new]
-      end.to_h
-    end
+    @repos = RepositoryContainer.new(repositories)
   end
 
   def get_a_list_of_matches
@@ -26,6 +22,6 @@ class SoccerHexagon
   private
 
   def repos
-    @repositories
+    @repos
   end
 end

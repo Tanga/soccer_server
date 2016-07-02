@@ -1,10 +1,10 @@
 RSpec.configure do |config|
   config.after(:each) do
-    [ SoccerHexagon::Fixtures::Repository,
-      SoccerHexagon::Pitches::Repository,
-      SoccerHexagon::Players::Repository,
-      SoccerHexagon::Teams::Repository,
-      SoccerHexagon::Matches::Repository ]
+    [ SoccerHexagon::Domain::Fixtures::Repository,
+      SoccerHexagon::Domain::Pitches::Repository,
+      SoccerHexagon::Domain::Players::Repository,
+      SoccerHexagon::Domain::Teams::Repository,
+      SoccerHexagon::Domain::Matches::Repository ]
     .each {|repo| repo.delete_all }
   end
 end

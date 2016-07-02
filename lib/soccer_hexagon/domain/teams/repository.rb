@@ -1,38 +1,40 @@
 class SoccerHexagon
-  module Teams
-    # This is the default "in memory" Teams Repository.
-    # When developing the domain, the in-memory repo makes it things fast to test
-    # without mocking.  A repository is only able to do operations on the aggregate
-    # head (Teams::Team).  There
-    # can be only one repository per module in the domain.
-    class Repository
-      @collection = {}
+  module Domain
+    module Teams
+      # This is the default "in memory" Teams Repository.
+      # When developing the domain, the in-memory repo makes it things fast to test
+      # without mocking.  A repository is only able to do operations on the aggregate
+      # head (Teams::Team).  There
+      # can be only one repository per module in the domain.
+      class Repository
+        @collection = {}
 
-      def self.create(attributes={})
-        next_id = (@collection.keys.length + 1).to_s
-        @collection[next_id] = Team.new(attributes.merge(id: next_id))
-      end
-
-      def self.update id, attributes
-        fixture = read(id)
-
-        attributes.each do |field, value|
-          fixture.send("#{field}=", value)
+        def self.create(attributes={})
+          next_id = (@collection.keys.length + 1).to_s
+          @collection[next_id] = Team.new(attributes.merge(id: next_id))
         end
 
-        fixture
-      end
+        def self.update id, attributes
+          fixture = read(id)
 
-      def self.read id
-        @collection[id]
-      end
+          attributes.each do |field, value|
+            fixture.send("#{field}=", value)
+          end
 
-      def self.delete(id)
-        @collection.delete(id)
-      end
+          fixture
+        end
 
-      def self.delete_all
-        @collection = {}
+        def self.read id
+          @collection[id]
+        end
+
+        def self.delete(id)
+          @collection.delete(id)
+        end
+
+        def self.delete_all
+          @collection = {}
+        end
       end
     end
   end

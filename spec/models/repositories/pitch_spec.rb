@@ -1,4 +1,4 @@
-describe Repositories::Pitch do
+describe Repositories::Pitches do
   subject { described_class.new }
   describe '#create' do
   end

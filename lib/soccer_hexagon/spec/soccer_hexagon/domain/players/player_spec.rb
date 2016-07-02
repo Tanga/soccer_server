@@ -1,7 +1,7 @@
 require 'spec_helper'
 require_relative 'player_behavior.rb'
 
-describe SoccerHexagon::Players::Player do
+describe SoccerHexagon::Domain::Players::Player do
   subject { described_class.new }
 
   let(:team) { double('Team') }

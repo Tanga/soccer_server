@@ -1,5 +1,5 @@
 module Repositories
-  class Fixture
+  class Fixtures
     def self.create **args
       ::Fixture.create args
     end

@@ -1,7 +1,7 @@
 require 'spec_helper'
 require_relative 'fixture_behavior.rb'
 
-describe SoccerHexagon::Fixtures::Fixture do
+describe SoccerHexagon::Domain::Fixtures::Fixture do
   subject { described_class.new }
 
 	let(:result) { double('Result') }

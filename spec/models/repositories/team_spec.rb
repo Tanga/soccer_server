@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Repositories::Team do
+describe Repositories::Teams do
   describe '#create' do
     it { described_class.create }
   end

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe SoccerHexagon::Fixtures::Goal do
+describe SoccerHexagon::Domain::Fixtures::Goal do
   subject { described_class.new }
 
   let(:player) { double('Player') }

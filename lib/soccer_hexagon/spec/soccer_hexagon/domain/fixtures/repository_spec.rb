@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe SoccerHexagon::Fixtures::Repository do
+describe SoccerHexagon::Domain::Fixtures::Repository do
   subject { described_class.new }
   describe '#create' do
   end

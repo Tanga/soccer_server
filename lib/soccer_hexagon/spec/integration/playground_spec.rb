@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-class SoccerHexagon
+module SoccerHexagon::Domain
   describe 'Playground' do
     it 'plays a soccer match' do
       # PITCH

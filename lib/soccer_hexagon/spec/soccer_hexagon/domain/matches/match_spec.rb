@@ -1,7 +1,7 @@
 require 'spec_helper'
 require_relative 'match_behavior.rb'
 
-describe SoccerHexagon::Matches::Match do
+describe SoccerHexagon::Domain::Matches::Match do
   subject { described_class.new }
 
   let(:pitch) { double('Pitch') }

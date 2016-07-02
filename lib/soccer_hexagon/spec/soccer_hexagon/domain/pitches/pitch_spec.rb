@@ -1,7 +1,7 @@
 require 'spec_helper'
 require_relative 'pitch_behavior.rb'
 
-describe SoccerHexagon::Pitches::Pitch do
+describe SoccerHexagon::Domain::Pitches::Pitch do
   subject { described_class.new }
 
   let(:name) { double('Name') }

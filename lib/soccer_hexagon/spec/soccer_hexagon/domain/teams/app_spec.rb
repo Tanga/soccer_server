@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe SoccerHexagon::Teams::App do
+describe SoccerHexagon::Domain::Teams::App do
   subject { described_class.new }
 
   let(:name) { double("Name") }

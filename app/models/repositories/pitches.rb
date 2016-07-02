@@ -3,7 +3,7 @@
 # to back the domain with a SQL database.
 
 module Repositories
-  class Pitch
+  class Pitches
     def self.create **args
       ::Pitch.create args
     end

@@ -1,7 +1,7 @@
 module Repositories
-  class Player
+  class Teams
     def self.create **args
-      ::Player.create args
+      ::Team.create args
     end
   end
 end
