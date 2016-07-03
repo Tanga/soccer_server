@@ -9,10 +9,10 @@ class SoccerHexagon
           @domain_module = domain_module
         end
 
-        def [](value)
+        def call
           @domain_module.constants.map do |c|
             [c.downcase, repository_constant(c.to_s)]
-          end.to_h[value]
+          end.to_h
         end
 
         private

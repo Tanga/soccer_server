@@ -1,7 +1,7 @@
 class SoccerHexagon
   module UseCases
     class CreateAMatch
-      def initialize(repositories)
+      def initialize(repositories=Utilities::Repositories.new)
         @repositories = repositories
       end
 
