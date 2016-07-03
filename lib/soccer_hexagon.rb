@@ -1,4 +1,4 @@
-require 'pry'
+
 require 'active_support/inflector'
 file_path = File.dirname(__FILE__)
 
