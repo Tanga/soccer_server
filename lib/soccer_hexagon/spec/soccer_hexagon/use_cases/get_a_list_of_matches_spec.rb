@@ -1,20 +1,19 @@
-describe SoccerHexagon::UseCases::GetAListOfMatches do
-  let(:teams)            { [double('Team'), double('Team')] }
-  let(:pitch)            { double('Pitch') }
-  let(:matches_repo)     { SoccerHexagon::Domain::Matches::Repository }
-  subject                { described_class.new }
+module SoccerHexagon::UseCases
+  describe GetAListOfMatches do
+    subject { described_class.new }
 
-  before do
-    @match = SoccerHexagon::UseCases::CreateAMatch.new.call(
-      on:          Date.today,
-      between:     teams,
-      at_location: pitch
-    )
-  end
+    before do
+      @match = CreateAMatch.new.call(
+        on:          Date.today,
+        between:     [double('Team'), double('Team')],
+        at_location: double('Pitch')
+      )
+    end
 
-  describe "#call" do
-    it 'lists matches' do
-      expect(subject.call).to include @match
+    describe "#call" do
+      it 'lists matches' do
+        expect(subject.call).to include @match
+      end
     end
   end
 end
