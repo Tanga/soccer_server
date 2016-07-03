@@ -6,9 +6,16 @@ class SoccerHexagon
       end
 
       def call(on:, between:, at_location:)
-        pitch = @repositories[:pitches].read(at_location)
-        teams = [between.first, between.last]
-        @repositories[:matches].create(pitch: pitch, teams: teams, datetime: on)
+        @repositories[:matches].create(
+          pitch:    pitch(at_location),
+          teams:    between,
+          datetime: on)
+      end
+
+      private
+
+      def pitch(id)
+        @repositories[:pitches].read(id)
       end
     end
   end
