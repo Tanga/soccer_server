@@ -8,10 +8,12 @@ class SoccerHexagon
       # can be only one repository per module in the domain.
       class Repository
         @collection = {}
+        @last_id = 0
 
         def self.create(attributes={})
-          next_id = (@collection.keys.length + 1).to_s
-          @collection[next_id] = Pitch.new(attributes.merge(id: next_id))
+          id = @last_id + 1
+          @collection[id] = Pitch.new(attributes.merge(id: id))
+          @last_id = id
         end
 
         def self.update id, attributes
@@ -26,6 +28,10 @@ class SoccerHexagon
 
         def self.read id
           @collection[id]
+        end
+
+        def self.query
+          @collection.values
         end
 
         def self.delete(id)
