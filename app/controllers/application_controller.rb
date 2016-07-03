@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :register_hexagon
 
-  def register_hexagon(hexagon = SoccerHexagon.new(Repositories))
+  def register_hexagon(hexagon = SoccerHexagon.new(container: Repositories))
     @hexagon ||= hexagon
   end
 
