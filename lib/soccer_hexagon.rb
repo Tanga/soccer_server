@@ -1,4 +1,4 @@
-
+require 'pry'
 require 'active_support/inflector'
 file_path = File.dirname(__FILE__)
 
@@ -15,12 +15,19 @@ file_path = File.dirname(__FILE__)
 # You can pass in repositories using the initializer if you want to use
 # something other than the default domain repos
 class SoccerHexagon
-  def initialize container: Utilities::Repositories.new
-    @repos = container
+  def initialize(
+    repos_container: Utilities::Repositories.new,
+    queries_container: Utilities::Queries.new)
+    @repos = repos_container
+    @queries = queries_container
   end
 
   def [](use_case_name, *args)
     use_case_constant(use_case_name).new(@repos).call(*args)
+  end
+
+  def query(module_name, args)
+    @queries[module_name, args]
   end
 
   private

@@ -32,6 +32,11 @@ class SoccerHexagon
           @collection.delete(id)
         end
 
+        def self.query
+          @collection.values
+        end
+
+
         def self.delete_all
           @collection = {}
         end

@@ -27,7 +27,7 @@ class SoccerHexagon
         end
 
         def self.read id
-          @collection[id]
+          @collection[id.to_i]
         end
 
         def self.query
@@ -35,11 +35,12 @@ class SoccerHexagon
         end
 
         def self.delete(id)
-          @collection.delete(id)
+          @collection.delete(id.to_i)
         end
 
         def self.delete_all
           @collection = {}
+          @last_id = 0
         end
       end
     end

@@ -1,18 +1,12 @@
 module SoccerHexagon::UseCases
   describe GetAListOfMatches do
-    subject { described_class.new }
-
-    before do
-      @match = CreateAMatch.new.call(
-        on:          Date.today,
-        between:     [double('Team'), double('Team')],
-        at_location: double('Pitch')
-      )
-    end
+    subject { described_class.new(repositories) }
+    let(:repositories) { double("Repositories") }
 
     describe "#call" do
       it 'lists matches' do
-        expect(subject.call).to include @match
+        expect(repositories).to receive(:[]).with(:matches) { double("Repository", query: []) }
+        subject.call
       end
     end
   end
