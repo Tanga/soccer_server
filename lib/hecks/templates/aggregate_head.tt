@@ -1,4 +1,4 @@
-module <%= hexagon_name.camelize %>
+class <%= hexagon_name.camelize %>
   module Domain
     module <%= name.camelize %>
       # This is the head of the <%= name.capitalize %> Aggregate.  An
