@@ -14,8 +14,11 @@ describe MatchesController do
   end
 
   describe "GET index" do
-    it do
+    before do
       allow(hexagon).to receive(:[]).with(:get_a_list_of_matches) { [match] }
+    end
+
+    it do
       get :index
       expect(JSON.parse(response.body)).to eq([{'name' => "A Match"}])
     end
@@ -23,11 +26,9 @@ describe MatchesController do
 
   describe "POST create" do
     let(:use_case) { double("UseCase", errors: []) }
+
     before do
       allow(hexagon).to receive(:[]) { use_case }
-
-      SoccerHexagon.new[:create_a_team, name: "Westside"]
-      SoccerHexagon.new[:create_a_team, name: "Eastside"]
     end
 
     describe "" do
@@ -41,7 +42,7 @@ describe MatchesController do
       let(:use_case) { double("UseCase", errors: ["error"], as_json: {errors: ["error"]}) }
 
       before do
-        allow(hexagon).to receive(:[]) { use_case  }
+        allow(hexagon).to receive(:[]) { use_case }
         post :create
       end
 
