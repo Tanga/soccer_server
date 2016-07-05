@@ -1,0 +1,2 @@
+describe <%=name.camelize %>::Utilities::Repositories do
+end
