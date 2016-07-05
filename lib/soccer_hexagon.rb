@@ -21,6 +21,12 @@ class SoccerHexagon
     @queries = queries_container
   end
 
+  def delete_all
+    @repos.all.each do |repo|
+      repo.delete_all
+    end
+  end
+
   def [](use_case_name, *args)
     use_case_constant(use_case_name).new(@repos).call(*args)
   end

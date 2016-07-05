@@ -10,6 +10,10 @@ class SoccerHexagon
         @repos = repositories.call
       end
 
+      def all
+        @repos.values
+      end
+
       def [](repo_name)
         @repos[repo_name]
       end
