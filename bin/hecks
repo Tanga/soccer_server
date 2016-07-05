@@ -4,12 +4,15 @@ require File.expand_path("lib/hecks/aggregate")
 require File.expand_path("lib/hecks/hexagon")
 require File.expand_path("lib/hecks/sql_repository")
 require File.expand_path("lib/hecks/value_object")
+require File.expand_path("lib/hecks/use_case")
+
 
 class Hecks < Thor
   register(HecksHexagon, "hexagon", "hexagon [HEXAGON_NAME]", "Create a Hexagon")
   register(HecksAggregate, "aggregate", "aggregate [HEXAGON_NAME] [AGGREGATE_NAME] [HEAD_NAME] [ATTRIBUTES]", "Creates a module with an aggregate head, a repository and application")
   register(HecksSqlRepository, "sql_repository", "sql_repository [HEXAGON_NAME] [AGGREGATE_NAME] [REPOSITORY_NAME]", "Creates a SQL Repository for use with Rails")
   register(HecksValueObject, "value_object", "value_object [HEXAGON_NAME] [MODULE_NAME] [VALUE_OBJECT_NAME] [ATTRIBUTES]", "Add a value object to a module")
+  register(HecksUseCase, "use_case", "use_case [HEXAGON_NAME] [MODULE_NAME] [USE_CASE_NAME]", "Add a use case to a module")
 end
 
 Hecks.start
