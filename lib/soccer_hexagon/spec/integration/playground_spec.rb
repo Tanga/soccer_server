@@ -2,7 +2,7 @@ require 'spec_helper'
 
 module SoccerHexagon::Domain
   describe 'Playground' do
-    it 'plays a soccer match' do
+    xit 'plays a soccer match' do
       # PITCH
       pitch    = Pitches::App.new.create(name: "My Backyard")
 

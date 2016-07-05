@@ -20,14 +20,6 @@
       "lib/#{hexagon_name}/spec/domain"
     end
 
-    def create_app
-      template('templates/app.tt', "#{domain_path}/#{name}/app.rb")
-    end
-
-    def create_app_spec_file
-      template('templates/spec/app.tt', "#{spec_path}/#{name}/app_spec.rb")
-    end
-
     def create_head
       template('templates/aggregate_head.tt', "#{domain_path}/#{name}/#{head_name}.rb")
     end
