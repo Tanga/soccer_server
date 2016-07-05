@@ -1,18 +1,23 @@
 class MatchesController < ApplicationController
   def index
-    render json: hexagon.get_a_list_of_matches
+    render json: hexagon[:get_a_list_of_matches]
   end
 
   def create
-    render json: hexagon.create_a_match(
-      on:          params[:datetime],
-      between:     params[:team_ids],
-      at_location: params[:pitch_id]
-    )
+    result = hexagon[:create_a_match,
+      on:          params[:on],
+      between:     params[:between],
+      at_location: params[:at_location]]
+
+    if result.errors.present?
+      render json: result, status: :unprocessable_entity
+    else
+      head :created
+    end
   end
 
   def show
-    render json: Matches.read(params[:id])
+    render json: hexagon.query(:matches, id: params[:id])
   end
 
   def update
