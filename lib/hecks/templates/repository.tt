@@ -36,6 +36,7 @@ module <%= hexagon_name.camelize %>
 
         def self.delete_all
           @collection = {}
+          @last_id = 0
         end
       end
     end
