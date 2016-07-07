@@ -2,7 +2,7 @@
     include Thor::Actions
 
     argument :hexagon_name, type: :string
-    argument :name
+    argument :module_name
     argument :head_name
     argument :attributes, type: :hash
 
