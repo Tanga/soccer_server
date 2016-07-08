@@ -1,0 +1,29 @@
+class <%= hexagon_name.camelize %>
+  module Domain
+    module <%= name.camelize %>
+      module UseCases
+        describe Create<%= head_name.camelize %> do
+          let(:validator)  { double('Validator',  call: nil, errors: []) }
+          let(:repository) { double('Repository', create: nil) }
+
+          subject do
+            described_class.new(
+              args: {},
+              repository: repository,
+              validators: [validator]
+            )
+          end
+
+          it 'creates a <%= head_name %>' do
+            expect(repository).to receive(:create)
+            expect(subject.call()).to be
+          end
+
+          it 'aggregates errors from the validators' do
+            expect(subject.call().errors).to eq []
+          end
+        end
+      end
+    end
+  end
+end
