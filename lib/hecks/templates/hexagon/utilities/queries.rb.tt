@@ -13,7 +13,7 @@ class <%= name.camelize %>
       def [](module_name, args={})
         repo = @repos[module_name]
         constant = query_constant(module_name)
-        constant.new(repo).call(args)
+        constant.new(repository: repo).call(args)
       end
 
       private
