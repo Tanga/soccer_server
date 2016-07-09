@@ -1,0 +1,39 @@
+class <%= hexagon_name.camelize %>
+  module Domain
+    module <%= name.camelize %>
+      class Update<%= head_name.camelize %>
+        attr_accessor :args
+
+        def initialize(args:, repository:, validators: [Validator.new])
+          @args       = args
+          @repository = repository
+          @validators = validators
+        end
+
+        def call(use_case=nil)
+          validate
+          update
+          self
+        end
+
+        def errors
+          @errors = validators.flat_map { |validator| validator.errors }
+        end
+
+        private
+
+        attr_accessor :repository, :validators
+
+        def validate
+          validators.each do |validator|
+            validator.call(self)
+          end
+        end
+
+        def update
+          repository.update(id: args[:id], attributes: args[:attributes])
+        end
+      end
+    end
+  end
+end
