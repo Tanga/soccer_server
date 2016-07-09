@@ -4,7 +4,7 @@ class <%= hexagon_name.camelize %>
       module UseCases
         describe Create<%= head_name.camelize %> do
           let(:validator)  { double('Validator',  call: nil, errors: []) }
-          let(:repository) { double('Repository', create: nil) }
+          let(:repository) { double('Repository', create: 1) }
 
           subject do
             described_class.new(
@@ -16,7 +16,11 @@ class <%= hexagon_name.camelize %>
 
           it 'creates a <%= head_name %>' do
             expect(repository).to receive(:create)
-            expect(subject.call()).to be
+            subject.call()
+          end
+
+          it 'attaches an id' do
+            expect(subject.call.id).to eq 1
           end
 
           it 'aggregates errors from the validators' do

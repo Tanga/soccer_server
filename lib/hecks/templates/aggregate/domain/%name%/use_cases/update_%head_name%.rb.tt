@@ -1,7 +1,7 @@
 class <%= hexagon_name.camelize %>
   module Domain
-    module UseCases
-      module <%= name.camelize %>
+    module <%= name.camelize %>
+      module UseCases
         class Update<%= head_name.camelize %>
           attr_accessor :args
 
