@@ -12,7 +12,7 @@ class <%= hexagon_name.camelize %>
 
         def self.create(attributes={})
           id = @last_id + 1
-          @collection[id] = Pitch.new(attributes.merge(id: id))
+          @collection[id] = <%= domain_head.camelize %>.new(attributes.merge(id: id))
           @last_id = id
         end
 
