@@ -1,7 +1,0 @@
-describe <%=name.camelize %>::Utilities::Queries do
-  subject { described_class.new }
-
-  describe '#[]' do
-    it { }
-  end
-end
