@@ -30,6 +30,10 @@ class <%= hexagon_name.camelize %>
           @collection[id]
         end
 
+        def self.query(args={})
+          Query.new(repository: self).call(args)
+        end
+
         def self.delete(id)
           @collection.delete(id)
         end

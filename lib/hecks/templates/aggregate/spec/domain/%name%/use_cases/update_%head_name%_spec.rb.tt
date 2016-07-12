@@ -5,12 +5,13 @@ class <%= hexagon_name.camelize %>
         describe Update<%= head_name.camelize %> do
           let(:validator)  { double('Validator',  call: nil, errors: []) }
           let(:repository) { double('Repository', update: nil) }
+          let(:database_adapter) { double('Adapter', :[] => repository) }
           let(:attributes) { { name: "new name" } }
 
           subject do
             described_class.new(
               args: {id: 1, attributes: attributes},
-              repository: repository,
+              database_adapter: database_adapter,
               validators: [validator]
             )
           end

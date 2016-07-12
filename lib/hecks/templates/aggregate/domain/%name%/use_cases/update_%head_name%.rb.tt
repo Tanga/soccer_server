@@ -5,9 +5,9 @@ class <%= hexagon_name.camelize %>
         class Update<%= head_name.camelize %>
           attr_accessor :args
 
-          def initialize(args:, repository:, validators: [Validator.new])
+          def initialize(args:, database_adapter:, validators: [Validator.new])
             @args       = args
-            @repository = repository
+            @database_adapter = database_adapter
             @validators = validators
           end
 
@@ -23,7 +23,7 @@ class <%= hexagon_name.camelize %>
 
           private
 
-          attr_accessor :repository, :validators
+          attr_accessor :database_adapter, :validators
 
           def validate
             validators.each do |validator|
@@ -32,7 +32,7 @@ class <%= hexagon_name.camelize %>
           end
 
           def update
-            repository.update(id: args[:id], attributes: args[:attributes])
+            database_adapter[:<%= name %>].update(id: args[:id], attributes: args[:attributes])
           end
         end
       end
