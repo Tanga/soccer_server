@@ -12,7 +12,7 @@ class <%= hexagon_name.camelize %>
 
         def self.create(attributes={})
           id = @last_id + 1
-          @collection[id] = Pitch.new(attributes.merge(id: id))
+          @collection[id] = <%= head_name.camelize %>.new(attributes.merge(id: id))
           @last_id = id
         end
 
@@ -28,6 +28,10 @@ class <%= hexagon_name.camelize %>
 
         def self.read id
           @collection[id]
+        end
+
+        def self.query(args={})
+          Query.new(repository: self).call(args)
         end
 
         def self.delete(id)
