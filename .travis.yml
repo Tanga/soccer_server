@@ -1,0 +1,9 @@
+addons:
+  postgresql: "9.4"
+script:
+  - bin/rake test:db
+  - bin/rake
+language: ruby
+cache: bundler
+notifications:
+  slack: tanganetwork:zpPQzEDWf5HfZ77a2vpEGHXS
